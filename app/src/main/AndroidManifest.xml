@@ -11,11 +11,11 @@
             android:theme="@style/AppTheme"
             android:name=".ProxyServer">
         <service android:name=".ProxyService"
-                android:enabled="true"
+                 android:enabled="true"
                  android:exported="true"
         >
             <intent-filter>
-                <action android:name="com.whatever.myservice.MyService" />
+                <action android:name=".ProxyService"/>
             </intent-filter>
         </service>
 
@@ -25,6 +25,12 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>
